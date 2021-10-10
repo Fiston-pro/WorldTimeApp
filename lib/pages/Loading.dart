@@ -13,7 +13,7 @@ class Loading extends StatefulWidget {
 class _LoadingState extends State<Loading> {
 
   void setUpTime() async{
-    Location instance = Location(location: 'London',url: 'London');
+    Location instance = Location(location: 'London',url: 'Europe/London');
     await instance.getTime();
     Navigator.pushReplacementNamed( context, '/Home', arguments: {
       'location': instance.location,

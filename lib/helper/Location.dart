@@ -16,7 +16,7 @@ class Location{
 
     try{
 
-      Response response = await get(Uri.parse('http://worldtimeapi.org/api/timezone/Europe/$url'));
+      Response response = await get(Uri.parse('http://worldtimeapi.org/api/timezone/$url'));
         // If the server did return a 200 OK response,
         // then parse the JSON.
         Map data = jsonDecode(response.body);
