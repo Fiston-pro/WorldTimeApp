@@ -12,23 +12,17 @@ class Locations extends StatefulWidget {
 class _LocationsState extends State<Locations> {
 
   List<Location> locations = [
-    Location(location: 'London',url: 'Europe/London'),
-    Location(location: 'Cairo',url: 'Africa/Cairo'),
-    Location(location: 'Chicago',url: 'America/Chicago'),
-    Location(location: 'Singapore',url: 'Asia/Singapore'),
-    Location(location: 'Brussels',url: 'Europe/Brussels'),
-    Location(location: 'Cairo',url: 'Africa/Cairo'),
-    Location(location: 'Chicago',url: 'America/Chicago'),
-    Location(location: 'Singapore',url: 'Asia/Singapore'),
-    Location(location: 'Brussels',url: 'Europe/Brussels'),
-    Location(location: 'Cairo',url: 'Africa/Cairo'),
-    Location(location: 'Chicago',url: 'America/Chicago'),
-    Location(location: 'Singapore',url: 'Asia/Singapore'),
-    Location(location: 'Brussels',url: 'Europe/Brussels'),
-    Location(location: 'Cairo',url: 'Africa/Cairo'),
-    Location(location: 'Chicago',url: 'America/Chicago'),
-    Location(location: 'Singapore',url: 'Asia/Singapore'),
-    Location(location: 'Brussels',url: 'Europe/Brussels')
+    Location(url: 'Europe/London'),
+    Location(url: 'Africa/Cairo'),
+    Location(url: 'America/Chicago'),
+    Location(url: 'Asia/Singapore'),
+    Location(url: 'Europe/Brussels'),
+    
+    Location(url: 'Europe/London'),
+    Location(url: 'Africa/Cairo'),
+    Location(url: 'America/Chicago'),
+    Location(url: 'Asia/Singapore'),
+    Location(url: 'Europe/Brussels')
   ];
 
   @override
@@ -44,11 +38,13 @@ class _LocationsState extends State<Locations> {
             itemBuilder: (BuildContext context, int index) {
               return  Card(child: ListTile(
                   onTap: () async {
-                    Location instance = Location(location: locations[index].location,
+                    Location instance = Location(
                     url: locations[index].url);
+                    
                     await instance.getTime();
+                    print('${instance.location}');
                     Navigator.pop(context,{
-                      'Location': instance.location,
+                      'location': instance.location,
                       'time': instance.time,
                       'isDaytime': instance.isDaytime
                     });

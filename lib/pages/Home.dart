@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
 
     data = data.isNotEmpty ? data : ModalRoute.of(context)!.settings.arguments as Map;
 
-    String image = data['isDayTime'] ? 'day.png' : 'night.png';
+    String image = data['isDayTime'] ? 'day.jpg' : 'night.jpg';
 
     return Scaffold(
       body: Container(
@@ -40,7 +40,6 @@ class _HomeState extends State<Home> {
                         'isDayTime': result['isDaytime']
                       };
                     });
-                    print('location is: ${result['location']}');
                   }, icon: Icon(Icons.edit_location,color: Colors.grey[300]), label: Text('other locations', style: TextStyle(fontSize: 20,color: Colors.grey[300]),)),
                   SizedBox(height: 50,),
                   Text('${data['location']}',style: TextStyle(fontSize: 30, letterSpacing: 2.0, color: Colors.white)),

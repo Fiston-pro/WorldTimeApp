@@ -4,13 +4,17 @@ import 'package:intl/intl.dart';
 
 class Location{
 
-  String location;
+  late String location;
   late String time;
   String url;
   late bool isDaytime;
   //String flag;
 
-  Location({required this.location,required this.url});
+  Location({required this.url}){
+    
+        List dummy = url.split('/');
+        location = dummy[1].toString();
+  }
 
   Future<void> getTime() async {
 
@@ -25,8 +29,15 @@ class Location{
         //making a datetime object
         DateTime now = DateTime.parse(data['datetime']);
         now =  now.add(Duration(hours: int.parse(utc)));
+
+        // check which time of the day is morning or night
         isDaytime = now.hour > 6 && now.hour < 20 ? true : false;
+
+        // Keep the current time from an api
         time = DateFormat.jm().format(now);
+
+        // keep the location
+
     } catch(e){
       print('Caught an error: $e');
     }
