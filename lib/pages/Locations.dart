@@ -29,7 +29,7 @@ class _LocationsState extends State<Locations> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.grey,centerTitle: true,
-        title: Text('Choose Location'),
+        title: Text('Choose any Location'),
       ),
       body:SafeArea(
           child: ListView.separated(
