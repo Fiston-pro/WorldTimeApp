@@ -38,7 +38,7 @@ class _LoadingState extends State<Loading> {
         child:
           SpinKitRotatingCircle(
           color: Colors.white,
-          size: 50.0,
+          size: 40.0,
         ),),
     );
   }
