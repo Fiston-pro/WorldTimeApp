@@ -39,7 +39,7 @@ class Location{
         // keep the location
 
     } catch(e){
-      print('Caught an error: $e');
+      print('Caught error: $e');
     }
     
   }
