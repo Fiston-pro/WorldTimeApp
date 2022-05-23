@@ -29,7 +29,7 @@ class _LoadingState extends State<Loading> {
     super.initState();
     setUpTime();
   }
-
+  // the widget to load in cicles untill data is provided
   @override
   Widget build(BuildContext context) {
     return Scaffold(
