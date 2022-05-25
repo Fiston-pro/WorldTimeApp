@@ -26,7 +26,7 @@ class Location{
         Map data = jsonDecode(response.body);
         String utc = data['utc_offset'].substring(1,3);
 
-        //making a datetime object
+        // making a datetime object
         DateTime now = DateTime.parse(data['datetime']);
         now =  now.add(Duration(hours: int.parse(utc)));
 
