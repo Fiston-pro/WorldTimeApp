@@ -8,7 +8,7 @@ class Location{
   late String time;
   String url;
   late bool isDaytime;
-  // String flag;
+  //String flag;
 
   Location({required this.url}){
     
